@@ -13,12 +13,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author FABRICIO CONSTANTE
  */
-public class FrmRevisionLista extends JInternalFrame{
+public class FrmListaRevision extends JInternalFrame{
     
     JLabel lblTitulo;
     JTable tabla;
     DefaultTableModel modelo;
-    public FrmRevisionLista(){
+    public FrmListaRevision(){
         this.setSize(800, 600);
         this.setLayout(new BorderLayout());
         this.setClosable(true);

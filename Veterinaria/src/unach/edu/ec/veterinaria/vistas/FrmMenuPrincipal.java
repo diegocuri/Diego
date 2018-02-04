@@ -192,7 +192,7 @@ public class FrmMenuPrincipal extends JFrame {
         frm.setVisible(true);
     }    
     public void mniListaMascotaActionPerformed(ActionEvent e){
-        FrmMascotaLista frm = new FrmMascotaLista();
+        FrmListaMascota frm = new FrmListaMascota();
         dkpEscritorio.add(frm,BorderLayout.WEST);
         frm.setVisible(true);
     }
@@ -207,7 +207,7 @@ public class FrmMenuPrincipal extends JFrame {
         frm.setVisible(true);
     }
     public void mniListaRevisionActionPerformed(ActionEvent e){
-        FrmRevisionLista frm = new FrmRevisionLista();
+        FrmListaRevision frm = new FrmListaRevision();
         dkpEscritorio.add(frm,BorderLayout.WEST);
         frm.setVisible(true);
     }

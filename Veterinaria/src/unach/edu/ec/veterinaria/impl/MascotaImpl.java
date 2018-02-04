@@ -18,7 +18,7 @@ public class MascotaImpl implements IMascota {
     public int insertar(Mascota mascota) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "insert into mascota  values "
-                + "(?,?,?,?)";
+                + "(?,?)";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, mascota.getCodigo()));
         lstPar.add(new Parametro(2, mascota.getNombre()));

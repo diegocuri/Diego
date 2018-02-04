@@ -12,6 +12,6 @@ public interface IRevision {
     public int insertar(Revision revision) throws Exception;
     public int modificar(Revision revision) throws Exception;
     public int eliminar(Revision revision) throws Exception;
-    public Revision obtener(int codigo) throws Exception;
+    public Revision obtener(int codigo_rev) throws Exception;
     public List<Revision> obtener() throws Exception;    
 }

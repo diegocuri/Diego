@@ -20,9 +20,9 @@ public class RevisionImpl implements IRevision {
         String sql = "insert into revision  values "
                 + "(?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, revision.getCodigo()));
-        lstPar.add(new Parametro(2, revision.getMascota().getCodigo()));
-        lstPar.add(new Parametro(3, revision.getVeterinario().getCodigo()));
+        lstPar.add(new Parametro(1, revision.getCodigo_rev()));
+        lstPar.add(new Parametro(2, revision.getMascota().getCodigo_mas()));
+        lstPar.add(new Parametro(3, revision.getVeterinario().getCodigo_vet()));
         lstPar.add(new Parametro(4, revision.getDescripcion()));
         Conexion con = null;
         try {
@@ -43,12 +43,12 @@ public class RevisionImpl implements IRevision {
     public int modificar(Revision revision) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE revision"
-                + "   SET codigo=?, nombre=?, sexo=?, raza=?"
-                + " where codigo=?";
+                + "   SET codigo_rev=?, nombre=?, sexo=?, raza=?"
+                + " where codigo_rev=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, revision.getCodigo()));
-        lstPar.add(new Parametro(2, revision.getMascota().getCodigo()));
-        lstPar.add(new Parametro(3, revision.getVeterinario().getCodigo()));
+        lstPar.add(new Parametro(1, revision.getCodigo_rev()));
+        lstPar.add(new Parametro(2, revision.getMascota().getCodigo_mas()));
+        lstPar.add(new Parametro(3, revision.getVeterinario().getCodigo_vet()));
         lstPar.add(new Parametro(4, revision.getDescripcion()));
         Conexion con = null;
         try {
@@ -68,9 +68,9 @@ public class RevisionImpl implements IRevision {
     @Override
     public int eliminar(Revision revision) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE FROM revision  where codigo=?";
+         String sql = "DELETE FROM revision  where codigo_rev=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, revision.getCodigo()));       
+        lstPar.add(new Parametro(1, revision.getCodigo_rev()));       
         Conexion con = null;
         try {
             con = new Conexion();
@@ -87,11 +87,11 @@ public class RevisionImpl implements IRevision {
     }
 
     @Override
-    public Revision obtener(int codigo) throws Exception {
+    public Revision obtener(int codigo_rev) throws Exception {
         Revision revision = null;
-        String sql = "SELECT * FROM revision where codigo=?;";
+        String sql = "SELECT * FROM revision where codigo_rev=?;";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, codigo));
+        lstPar.add(new Parametro(1, codigo_rev));
         Conexion con = null;
         try {
             con = new Conexion();
@@ -99,7 +99,7 @@ public class RevisionImpl implements IRevision {
             ResultSet rst = con.ejecutaQuery(sql, lstPar);
             while (rst.next()) {
                 revision = new Revision();
-                revision.setCodigo(rst.getInt(1));
+                revision.setCodigo_rev(rst.getInt(1));
                 IMascota mascotadao = new MascotaImpl();
                 Mascota mascota = mascotadao.obtener(rst.getInt(2)); 
                 IVeterinario veterinariodao = new VeterinarioImpl();
@@ -127,7 +127,7 @@ public class RevisionImpl implements IRevision {
             Revision revision=null;
             while (rst.next()) {
                 revision = new Revision();
-                revision.setCodigo(rst.getInt(1));
+                revision.setCodigo_rev(rst.getInt(1));
                 IMascota mascotadao = new MascotaImpl();
                 Mascota mascota = mascotadao.obtener(rst.getInt(2));                
                 IVeterinario veterinariodao = new VeterinarioImpl();

@@ -20,7 +20,7 @@ public class MascotaImpl implements IMascota {
         String sql = "insert into mascota  values "
                 + "(?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, mascota.getCodigo()));
+        lstPar.add(new Parametro(1, mascota.getCodigo_mas()));
         lstPar.add(new Parametro(2, mascota.getNombre()));
         lstPar.add(new Parametro(3, mascota.getSexo()));
         lstPar.add(new Parametro(4, mascota.getRaza()));
@@ -43,10 +43,10 @@ public class MascotaImpl implements IMascota {
     public int modificar(Mascota mascota) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE mascota"
-                + "   SET codigo=?, nombre=?, sexo=?, raza=?"
-                + " where codigo=?";
+                + "   SET codigo_mas=?, nombre=?, sexo=?, raza=?"
+                + " where codigo_mas=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, mascota.getCodigo()));
+        lstPar.add(new Parametro(1, mascota.getCodigo_mas()));
         lstPar.add(new Parametro(2, mascota.getNombre()));
         lstPar.add(new Parametro(3, mascota.getSexo()));
         lstPar.add(new Parametro(4, mascota.getRaza()));
@@ -68,9 +68,9 @@ public class MascotaImpl implements IMascota {
     @Override
     public int eliminar(Mascota mascota) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE FROM mascota  where codigo=?";
+         String sql = "DELETE FROM mascota  where codigo_mas=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, mascota.getCodigo()));       
+        lstPar.add(new Parametro(1, mascota.getCodigo_mas()));       
         Conexion con = null;
         try {
             con = new Conexion();
@@ -87,11 +87,11 @@ public class MascotaImpl implements IMascota {
     }
 
     @Override
-    public Mascota obtener(int codigo) throws Exception {
+    public Mascota obtener(int codigo_mas) throws Exception {
         Mascota mascota = null;
-        String sql = "SELECT * FROM mascota where codigo=?;";
+        String sql = "SELECT * FROM mascota where codigo_mas=?;";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, codigo));
+        lstPar.add(new Parametro(1, codigo_mas));
         Conexion con = null;
         try {
             con = new Conexion();
@@ -99,7 +99,7 @@ public class MascotaImpl implements IMascota {
             ResultSet rst = con.ejecutaQuery(sql, lstPar);
             while (rst.next()) {
                 mascota = new Mascota();
-                mascota.setCodigo(rst.getInt(1));
+                mascota.setCodigo_mas(rst.getInt(1));
                 mascota.setNombre(rst.getString(2));
                 mascota.setSexo(rst.getString(3));
                 mascota.setRaza(rst.getString(4));
@@ -125,7 +125,7 @@ public class MascotaImpl implements IMascota {
             Mascota mascota=null;
             while (rst.next()) {
                 mascota = new Mascota();
-                mascota.setCodigo(rst.getInt(1));
+                mascota.setCodigo_mas(rst.getInt(1));
                 mascota.setNombre(rst.getString(2));
                 mascota.setSexo(rst.getString(3));
                 mascota.setRaza(rst.getString(4));

@@ -11,6 +11,6 @@ public interface IVeterinario {
     public int insertar(Veterinario veterinario) throws Exception;
     public int modificar(Veterinario veterinario) throws Exception;
     public int eliminar(Veterinario veterinario) throws Exception;
-    public Veterinario obtener(int codigo) throws Exception;
+    public Veterinario obtener(int codigo_vet) throws Exception;
     public List<Veterinario> obtener() throws Exception;    
 }

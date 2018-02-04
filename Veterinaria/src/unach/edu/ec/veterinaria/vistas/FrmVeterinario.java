@@ -15,11 +15,11 @@ import unach.edu.ec.veterinaria.dao.IVeterinario;
 import unach.edu.ec.veterinaria.impl.VeterinarioImpl;
 
 public class FrmVeterinario extends JInternalFrame{    
-    JLabel lblCodigo;
+    JLabel lblCodigo_vet;
     JLabel lblNombre; 
     JLabel lblTitulo0;
     
-    JTextField txtCodigo;
+    JTextField txtCodigo_vet;
     JTextField txtNombre;
 
     
@@ -39,17 +39,17 @@ public class FrmVeterinario extends JInternalFrame{
         
         lblTitulo0 = new JLabel(" Datos Veterinario");
         
-        lblCodigo= new JLabel("Código:");
+        lblCodigo_vet= new JLabel("Código:");
         lblNombre= new JLabel("Nombre:");
        
 
-        txtCodigo = new JTextField(2);
+        txtCodigo_vet = new JTextField(2);
         txtNombre= new JTextField(2);
         btnLimpiar= new JButton("Limpiar");
         btnAceptar= new JButton("Aceptar");
         
-        pnlCentral.add(lblCodigo);
-        pnlCentral.add(txtCodigo);
+        pnlCentral.add(lblCodigo_vet);
+        pnlCentral.add(txtCodigo_vet);
       
         pnlCentral.add(lblNombre);
         pnlCentral.add(txtNombre);
@@ -82,7 +82,7 @@ public class FrmVeterinario extends JInternalFrame{
         IVeterinario veterinarioDao = new VeterinarioImpl();
         Veterinario veterinario = new Veterinario();
         
-        veterinario.setCodigo(Integer.parseInt(txtCodigo.getText()));
+        veterinario.setCodigo_vet(Integer.parseInt(txtCodigo_vet.getText()));
         veterinario.setNombre(txtNombre.getText());
         
      

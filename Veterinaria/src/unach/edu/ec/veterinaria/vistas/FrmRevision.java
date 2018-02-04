@@ -96,7 +96,7 @@ public class FrmRevision extends JInternalFrame{
         try {
             
             Revision revision = new Revision();
-            revision.setCodigo(Integer.parseInt(txtTitulo1.getText()));
+            revision.setCodigo_rev(Integer.parseInt(txtTitulo1.getText()));
             revision.setMascota((Mascota)cmbRevision1.getSelectedItem());
             revision.setVeterinario((Veterinario)cmbRevision2.getSelectedItem());
             revision.setDescripcion(txtTitulo2.getText());

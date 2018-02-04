@@ -2,7 +2,7 @@
 package unach.edu.ec.veterinaria.Entidades;
 
 public class Mascota {
-    private int codigo;
+    private int codigo_mas;
     private String nombre;
     private String sexo;
     private String raza;
@@ -10,19 +10,19 @@ public class Mascota {
     public Mascota() {
     }
 
-    public Mascota(int codigo, String nombre, String sexo, String raza) {
-        this.codigo = codigo;
+    public Mascota(int codigo_mas, String nombre, String sexo, String raza) {
+        this.codigo_mas = codigo_mas;
         this.nombre = nombre;
         this.sexo = sexo;
         this.raza = raza;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getCodigo_mas() {
+        return codigo_mas;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodigo_mas(int codigo_mas) {
+        this.codigo_mas = codigo_mas;
     }
 
     public String getNombre() {

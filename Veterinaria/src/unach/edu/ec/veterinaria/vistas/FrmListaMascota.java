@@ -29,7 +29,7 @@ public class FrmListaMascota extends JInternalFrame{
 
         
         modelo = new DefaultTableModel();
-        modelo.addColumn("Codigo");
+        modelo.addColumn("Codigo_mas");
         modelo.addColumn("Nombre");
         modelo.addColumn("Sexo");
         modelo.addColumn("Raza");
@@ -48,7 +48,7 @@ public class FrmListaMascota extends JInternalFrame{
         }
         
         for (Mascota mas : lista){
-            modelo.addRow(new Object[] { mas.getCodigo(), mas.getNombre(), mas.getSexo(), mas.getRaza()});
+            modelo.addRow(new Object[] { mas.getCodigo_mas(), mas.getNombre(), mas.getSexo(), mas.getRaza()});
             
         }
         

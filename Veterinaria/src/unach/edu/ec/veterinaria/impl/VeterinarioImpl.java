@@ -20,7 +20,7 @@ public class VeterinarioImpl implements IVeterinario {
         String sql = "insert into veterinario  values "
                 + "(?,?)";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, veterinario.getCodigo()));
+        lstPar.add(new Parametro(1, veterinario.getCodigo_vet()));
         lstPar.add(new Parametro(2, veterinario.getNombre()));
         Conexion con = null;
         try {
@@ -41,10 +41,10 @@ public class VeterinarioImpl implements IVeterinario {
     public int modificar(Veterinario veterinario) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE veterinario"
-                + "   SET codigo=?, nombre=?, sexo=?, raza=?"
-                + " where codigo=?";
+                + "   SET codigo_vet=?, nombre=?, sexo=?, raza=?"
+                + " where codigo_vet=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, veterinario.getCodigo()));
+        lstPar.add(new Parametro(1, veterinario.getCodigo_vet()));
         lstPar.add(new Parametro(2, veterinario.getNombre()));
         Conexion con = null;
         try {
@@ -64,9 +64,9 @@ public class VeterinarioImpl implements IVeterinario {
     @Override
     public int eliminar(Veterinario veterinario) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE FROM veterinario  where codigo=?";
+         String sql = "DELETE FROM veterinario  where codigo_vet=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, veterinario.getCodigo()));       
+        lstPar.add(new Parametro(1, veterinario.getCodigo_vet()));       
         Conexion con = null;
         try {
             con = new Conexion();
@@ -83,11 +83,11 @@ public class VeterinarioImpl implements IVeterinario {
     }
 
     @Override
-    public Veterinario obtener(int codigo) throws Exception {
+    public Veterinario obtener(int codigo_vet) throws Exception {
         Veterinario veterinario = null;
-        String sql = "SELECT * FROM veterinario where codigo=?;";
+        String sql = "SELECT * FROM veterinario where codigo_vet=?;";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, codigo));
+        lstPar.add(new Parametro(1, codigo_vet));
         Conexion con = null;
         try {
             con = new Conexion();
@@ -95,7 +95,7 @@ public class VeterinarioImpl implements IVeterinario {
             ResultSet rst = con.ejecutaQuery(sql, lstPar);
             while (rst.next()) {
                 veterinario = new Veterinario();
-                veterinario.setCodigo(rst.getInt(1));
+                veterinario.setCodigo_vet(rst.getInt(1));
                 veterinario.setNombre(rst.getString(2));
             }
         } catch (Exception e) {
@@ -119,7 +119,7 @@ public class VeterinarioImpl implements IVeterinario {
             Veterinario veterinario=null;
             while (rst.next()) {
                 veterinario = new Veterinario();
-                veterinario.setCodigo(rst.getInt(1));
+                veterinario.setCodigo_vet(rst.getInt(1));
                 veterinario.setNombre(rst.getString(2));
                 lista.add(veterinario);
             }

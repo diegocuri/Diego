@@ -31,7 +31,7 @@ public class FrmListaRevision extends JInternalFrame{
     }
     public void cargarTabla(){
         modelo = new DefaultTableModel();
-        modelo.addColumn("Codigo");
+        modelo.addColumn("Codigo_rev");
         modelo.addColumn("Mascota");
         modelo.addColumn("Veterinario");
         modelo.addColumn("Descripcion");
@@ -44,7 +44,7 @@ public class FrmListaRevision extends JInternalFrame{
             JOptionPane.showMessageDialog(this, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
         for(Revision rev : list){
-            modelo.addRow(new Object[]{rev.getCodigo(),rev.getMascota(),rev.getVeterinario(),rev.getDescripcion().toString()});
+            modelo.addRow(new Object[]{rev.getCodigo_rev(),rev.getMascota(),rev.getVeterinario(),rev.getDescripcion().toString()});
         }
         tabla.setModel(modelo);
     }

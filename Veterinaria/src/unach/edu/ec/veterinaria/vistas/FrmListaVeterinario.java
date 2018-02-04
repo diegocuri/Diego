@@ -32,7 +32,7 @@ public class FrmListaVeterinario extends JInternalFrame{
    
         
         modelo = new DefaultTableModel();
-        modelo.addColumn("Codigo");
+        modelo.addColumn("Codigo_vet");
         modelo.addColumn("Nombre");
    
         
@@ -51,7 +51,7 @@ public class FrmListaVeterinario extends JInternalFrame{
 
         
         for (Veterinario doc : lista){
-            modelo.addRow(new Object[] { doc.getCodigo(), doc.getNombre(), });
+            modelo.addRow(new Object[] { doc.getCodigo_vet(), doc.getNombre(), });
             
         }
         

@@ -88,7 +88,7 @@ public class FrmMascota extends JInternalFrame{
     public void btnAceptarActionListener(ActionEvent e){
        try {
             Mascota mascota = new Mascota();
-            mascota.setCodigo(Integer.parseInt(txtTitulo1.getText()));
+            mascota.setCodigo_mas(Integer.parseInt(txtTitulo1.getText()));
             mascota.setNombre(txtTitulo2.getText());
             mascota.setSexo(cmbSexo.getSelectedIndex()==1 ? "m" : "f");
             mascota.setRaza(txtTitulo3.getText());

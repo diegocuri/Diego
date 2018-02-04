@@ -11,6 +11,6 @@ public interface IMascota {
     public int insertar(Mascota mascota) throws Exception;
     public int modificar(Mascota mascota) throws Exception;
     public int eliminar(Mascota mascota) throws Exception;
-    public Mascota obtener(int codigo) throws Exception;
+    public Mascota obtener(int codigo_mas) throws Exception;
     public List<Mascota> obtener() throws Exception;    
 }

@@ -18,7 +18,7 @@ public class VeterinarioImpl implements IVeterinario {
     public int insertar(Veterinario veterinario) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "insert into veterinario  values "
-                + "(?,?,?,?)";
+                + "(?,?)";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, veterinario.getCodigo()));
         lstPar.add(new Parametro(2, veterinario.getNombre()));

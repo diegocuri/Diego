@@ -7,8 +7,8 @@ import java.util.List;
 public class Conexion {
 
     final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    final String URL = "jdbc:sqlserver://192.168.1.7:1433;databaseName=EJERCICIO";
-    final String USER = "diegoc";
+    final String URL = "jdbc:sqlserver://192.168.100.30:1433;databaseName=Veterinaria";
+    final String USER = "Veterinaria";
     final String PASS = "1234";
     Connection con = null;
 

@@ -102,8 +102,10 @@ public class RevisionImpl implements IRevision {
                 revision.setCodigo_rev(rst.getInt(1));
                 IMascota mascotadao = new MascotaImpl();
                 Mascota mascota = mascotadao.obtener(rst.getInt(2)); 
+                revision.setMascota(mascota);
                 IVeterinario veterinariodao = new VeterinarioImpl();
                 Veterinario veterinario = veterinariodao.obtener(rst.getInt(3));                
+                revision.setVeterinario(veterinario);
                 revision.setDescripcion(rst.getString(4));
             }
         } catch (Exception e) {
@@ -129,9 +131,11 @@ public class RevisionImpl implements IRevision {
                 revision = new Revision();
                 revision.setCodigo_rev(rst.getInt(1));
                 IMascota mascotadao = new MascotaImpl();
-                Mascota mascota = mascotadao.obtener(rst.getInt(2));                
+                Mascota mascota = mascotadao.obtener(rst.getInt(2)); 
+                revision.setMascota(mascota);
                 IVeterinario veterinariodao = new VeterinarioImpl();
                 Veterinario veterinario = veterinariodao.obtener(rst.getInt(3));                
+                revision.setVeterinario(veterinario);
                 revision.setDescripcion(rst.getString(4));
                 lista.add(revision);
             }

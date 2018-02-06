@@ -10,7 +10,7 @@ import java.util.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  *
- * @author FABRICIO CONSTANTE
+ * @author
  */ 
 public class FrmMenuPrincipal extends JFrame {
 

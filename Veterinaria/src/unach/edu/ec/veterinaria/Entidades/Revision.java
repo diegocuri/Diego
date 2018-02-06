@@ -1,7 +1,7 @@
 
 package unach.edu.ec.veterinaria.Entidades;
 
-public class Revision {
+public class Revision extends Mascota{
     private int codigo_rev;
     private Mascota mascota;
     private Veterinario veterinario;

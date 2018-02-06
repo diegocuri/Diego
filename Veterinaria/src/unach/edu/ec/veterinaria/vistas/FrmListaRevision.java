@@ -44,7 +44,7 @@ public class FrmListaRevision extends JInternalFrame{
             JOptionPane.showMessageDialog(this, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
         for(Revision rev : list){
-            modelo.addRow(new Object[]{rev.getCodigo_rev(),rev.getMascota(),rev.getVeterinario(),rev.getDescripcion().toString()});
+            modelo.addRow(new Object[]{rev.getCodigo_rev(),rev.getMascota().getNombre(),rev.getVeterinario().getNombre(),rev.getDescripcion().toString()});
         }
         tabla.setModel(modelo);
     }

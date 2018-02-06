@@ -16,7 +16,7 @@ import javax.swing.*;
  *
  * @author FABRICIO CONSTANTE
  */
-public class FrmRevision extends JInternalFrame{
+public final class FrmRevision extends JInternalFrame{
     JLabel lblTitulo0,lblTitulo1,lblTitulo2,lblMascota,lblVeterinario;
    
     JTextField txtTitulo1,txtTitulo2;
@@ -45,6 +45,7 @@ public class FrmRevision extends JInternalFrame{
         
         lblTitulo1= new JLabel("CODIGO:");
         lblTitulo2= new JLabel("DESCRIPCION:");
+        
 
         cargarMascotas();  
         cmbRevision1=new JComboBox(lstrevision1.toArray());
@@ -67,14 +68,11 @@ public class FrmRevision extends JInternalFrame{
         pnlCentral.add(lblTitulo2);
         pnlCentral.add(txtTitulo2);
         
-        btnAceptar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    btnAceptarActionListener(e);
-                } catch (Exception ex) {
-                    System.out.println("Error:"+ex.getMessage());
-                }
+        btnAceptar.addActionListener((ActionEvent e) -> {
+            try {
+                btnAceptarActionListener(e);
+            } catch (Exception ex) {
+                System.out.println("Error:"+ex.getMessage());
             }
         });
         
